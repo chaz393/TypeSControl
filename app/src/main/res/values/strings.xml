@@ -8,4 +8,6 @@
     <string name="turn_off">turn off</string>
     <string name="off">off</string>
     <string name="on">on</string>
+    <string name="connect_and_turn_on">connect and turn on</string>
+    <string name="connect_and_turn_off">connect and turn off</string>
 </resources>

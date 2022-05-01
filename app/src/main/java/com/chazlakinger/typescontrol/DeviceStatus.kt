@@ -1,6 +1,6 @@
 package com.chazlakinger.typescontrol
 
-class DeviceStatus(val mac: String, var connected: Boolean, var on: Boolean) {
+class DeviceStatus(val mac: String, var connected: Boolean?, var on: Boolean?) {
 
     override fun equals(other: Any?): Boolean {
         return when (other) {
