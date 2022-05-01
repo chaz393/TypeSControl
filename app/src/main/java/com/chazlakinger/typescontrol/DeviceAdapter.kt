@@ -22,10 +22,10 @@ class DeviceAdapter(private val devices: ArrayList<DeviceStatus>, private val co
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.mac.text = devices[position].mac
-        holder.connected.text = if (devices[position].connected)
+        holder.connected.text = if (devices[position].connected == true)
             context.getString(R.string.device_connected) else
             context.getString(R.string.device_disconnected)
-        holder.on.text = if (devices[position].on)
+        holder.on.text = if (devices[position].on == true)
             context.getString(R.string.on) else
             context.getString(R.string.off)
     }
