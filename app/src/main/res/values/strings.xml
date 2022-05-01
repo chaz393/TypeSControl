@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TypeSControl</string>
+    <string name="device_connected">Connected</string>
+    <string name="device_disconnected">Disonnected</string>
+    <string name="connect">connect</string>
+    <string name="disconnect">disconnect</string>
+    <string name="turn_on">turn on</string>
+    <string name="turn_off">turn off</string>
+    <string name="off">off</string>
+    <string name="on">on</string>
+</resources>

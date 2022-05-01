@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/device_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#000"
+        android:dividerHeight="2dp"
+        android:listSelector="#600"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@id/device_adapter"
+        app:layout_constraintLeft_toLeftOf="@id/device_adapter"
+        android:id="@+id/ble_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect"/>
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@id/ble_connect"
+        app:layout_constraintLeft_toLeftOf="@id/ble_connect"
+        android:id="@+id/ble_disconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disconnect"/>
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@id/ble_disconnect"
+        app:layout_constraintLeft_toLeftOf="@id/ble_disconnect"
+        android:id="@+id/ble_turn_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/turn_on"
+        android:enabled="false"/>
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@id/ble_turn_on"
+        app:layout_constraintLeft_toLeftOf="@id/ble_turn_on"
+        android:id="@+id/ble_turn_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/turn_off"
+        android:enabled="false"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
