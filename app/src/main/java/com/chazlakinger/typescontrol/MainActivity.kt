@@ -16,15 +16,14 @@ class MainActivity : AppCompatActivity(), BluetoothHelper.BluetoothEventListener
     private lateinit var bleConnectAndTurnOn: Button
     private lateinit var bleConnectAndTurnOff: Button
     private lateinit var devicesView: RecyclerView
-    private lateinit var devicesForDisplay: ArrayList<DeviceStatus>
 
-    private val bluetoothHelper = BluetoothHelper(this, this)
+    private val bluetoothHelper = BluetoothHelper(this)
+    private val devicesForDisplay = generateDevicesForDisplay()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
                 setContentView(R.layout.activity_main)
 
-        generateDevicesForDisplay()
         bleConnectButton = findViewById(R.id.ble_connect)
         bleDisconnectButton = findViewById(R.id.ble_disconnect)
         bleTurnOnButton = findViewById(R.id.ble_turn_on)
@@ -92,12 +91,13 @@ class MainActivity : AppCompatActivity(), BluetoothHelper.BluetoothEventListener
 
     }
 
-    private fun generateDevicesForDisplay() {
-        devicesForDisplay = ArrayList()
+    private fun generateDevicesForDisplay(): ArrayList<DeviceStatus> {
+        val devicesForDisplay = ArrayList<DeviceStatus>()
         for (entry in bluetoothHelper.macs) {
             val device = DeviceStatus(entry.second, false, false)
             devicesForDisplay.add(device)
         }
+        return devicesForDisplay
     }
 }
 

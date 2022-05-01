@@ -29,7 +29,7 @@ class ActivityConfigTurnOff : Activity(), TaskerPluginConfigNoInput {
 
 class TurnOffRunner : TaskerPluginRunnerActionNoOutputOrInput(), BluetoothHelper.BluetoothEventListener {
     override fun run(context: Context, input: TaskerInput<Unit>): TaskerPluginResult<Unit> {
-        val bluetoothHelper = BluetoothHelper(context, this)
+        val bluetoothHelper = BluetoothHelper(context)
         bluetoothHelper.connectAndTurnOff()
         return TaskerPluginResultSucess()
     }

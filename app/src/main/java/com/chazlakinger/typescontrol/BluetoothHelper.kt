@@ -7,10 +7,11 @@ import java.util.*
 import kotlin.collections.HashMap
 
 
-class BluetoothHelper (private val context: Context, private val bluetoothEventListenerListener: BluetoothEventListener) {
+class BluetoothHelper (private val context: Context) {
     val macs = arrayListOf(Pair("Front", "E0:50:91:D0:DC:4A"), Pair("Sides", "C6:D3:3C:D1:02:DE"), Pair("Rear", "EA:6F:48:49:98:D6"))
     private val serviceUuid = UUID.fromString("8d96a001-0106-64c2-0001-9acc4838521c")
     private val characteristicUuid = UUID.fromString("8d96b001-0106-64c2-0001-9acc4838521c")
+    private val bluetoothEventListenerListener = context as BluetoothEventListener
 
     interface BluetoothEventListener {
         fun deviceConnectionChange(device: DeviceStatus)
