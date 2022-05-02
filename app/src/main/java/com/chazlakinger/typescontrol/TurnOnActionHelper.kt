@@ -27,18 +27,10 @@ class ActivityConfigTurnOn : Activity(), TaskerPluginConfigNoInput {
     }
 }
 
-class TurnOnRunner : TaskerPluginRunnerActionNoOutputOrInput(), BluetoothHelper.BluetoothEventListener {
+class TurnOnRunner : TaskerPluginRunnerActionNoOutputOrInput() {
     override fun run(context: Context, input: TaskerInput<Unit>): TaskerPluginResult<Unit> {
         val bluetoothHelper = BluetoothHelper(context)
         bluetoothHelper.connectAndTurnOn()
         return TaskerPluginResultSucess()
-    }
-
-    override fun deviceConnectionChange(device: DeviceStatus) {
-        //no-op
-    }
-
-    override fun deviceStateChanged(device: DeviceStatus) {
-        //no-op
     }
 }
